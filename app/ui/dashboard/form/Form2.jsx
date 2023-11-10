@@ -13,7 +13,6 @@ const Form2 = ({ incrementStep, decrimentStep, setFormData }) => {
     })
 
     const submitData = (data) => {
-        console.log("Data :", data);
         setFormData(prev => [...prev, data])
         incrementStep()
     }
