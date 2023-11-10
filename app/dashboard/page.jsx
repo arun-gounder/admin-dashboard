@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from '../ui/dashboard/card/Card'
-import Lists from '../ui/dashboard/lists/Lists'
+import Card from '../_components/dashboard/card/Card'
+import Lists from '../_components/dashboard/lists/Lists'
 
 const page = () => {
   return (

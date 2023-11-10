@@ -1,4 +1,4 @@
-import Form from '@/app/ui/dashboard/form/Form'
+import Form from '@/app/_components/dashboard/form/Form'
 import React from 'react'
 
 const page = () => {
