@@ -2,8 +2,11 @@ import React from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/link'
 
 const Form1 = ({ decrimentStep, setFormData }) => {
+
+    const navigate = useRouter();
 
     const scheme = z.object({
         fullName: z.string().min(5).max(50),
@@ -17,6 +20,7 @@ const Form1 = ({ decrimentStep, setFormData }) => {
 
     const submitData = (data) => {
         setFormData(prev => [...prev, data])
+        navigate.push("/dashboard")
     }
 
     const { register, handleSubmit } = useForm({ resolver: zodResolver(scheme) })
