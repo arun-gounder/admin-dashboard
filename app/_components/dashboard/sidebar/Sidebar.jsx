@@ -45,7 +45,7 @@ const Sidebar = () => {
 
   const [isCollapse, setIsCollapse] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const arrowStyles = isOpen ? "transform rotate-180" : "transform rotate-0";
+  // const arrowStyles = isOpen ? "transform rotate-180" : "transform rotate-0";
 
   //   console.log(isCollapse);
 
@@ -91,7 +91,12 @@ const Sidebar = () => {
           })}
 
           <li className="relative flex flex-col justify-center py-2 pl-4 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-orange-400 pr-6">
-            <a className={`${isCollapse ? "block" : "flex items-center justify-between"} lg:flex justify-between `}>
+            <a
+              className={`${
+                isCollapse ? "block" : "flex items-center justify-between"
+              } lg:flex justify-between cursor-pointer `}
+              onClick={toggleAccordion}
+            >
               <div className={`${isCollapse ? "hidden" : "flex"} lg:flex`}>
                 <span className="text-[20px]">
                   <CiCircleMore />
@@ -101,8 +106,9 @@ const Sidebar = () => {
                 </span>
               </div>
               <FaAngleDown
-                className={`cursor-pointer text-[20px] transition ${arrowStyles}`}
-                onClick={toggleAccordion}
+                className={`text-[20px] transition ${
+                  isOpen ? "transform rotate-180" : "transform rotate-0"
+                }`}
               />
             </a>
 
