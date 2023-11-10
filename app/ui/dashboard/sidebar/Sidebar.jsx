@@ -28,7 +28,6 @@ const Sidebar = () => {
     }
 
     const [isCollapse, setIsCollapse] = useState(true);
-    console.log(isCollapse);
     return (
         <div className={`lg:w-64 sticky h-screen flex flex-col top-0 left-0 ${isCollapse ? "w-14" : "w-64"} transition-all ease-in-out delay-200 bg-white h-full border-r`}>
             <button onClick={() => setIsCollapse(!isCollapse)} className='lg:hidden absolute right-[15px] top-[50px] bg-orange-400 text-white rounded-full p-1'>
