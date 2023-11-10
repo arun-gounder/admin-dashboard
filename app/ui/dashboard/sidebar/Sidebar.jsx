@@ -14,7 +14,13 @@ import { BsTriangleHalf, BsChevronDown } from "react-icons/bs";
 import { HiOutlineInbox } from "react-icons/hi";
 import { BsListTask } from "react-icons/bs";
 import { FiUsers, FiLogOut } from "react-icons/fi";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaAngleRight,
+  FaAngleDown,
+  FaAngleUp,
+} from "react-icons/fa";
+import { CiCircleMore } from "react-icons/ci";
 
 const Sidebar = () => {
   const sildebarData = {
@@ -39,7 +45,7 @@ const Sidebar = () => {
 
   const [isCollapse, setIsCollapse] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const arrowStyles = isOpen ? 'transform rotate-180' : 'transform rotate-0';
+  const arrowStyles = isOpen ? "transform rotate-180" : "transform rotate-0";
 
   //   console.log(isCollapse);
 
@@ -85,22 +91,29 @@ const Sidebar = () => {
           })}
 
           <li className="relative flex flex-col justify-center py-2 pl-4 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-orange-400 pr-6">
-            <a className="flex items-center justify-between">
-              <span className="text-sm">View More</span>
-              <AiOutlineDown
-                className={`cursor-pointer transition ${arrowStyles}`}
+            <a className={`${isCollapse ? "block" : "flex items-center justify-between"} lg:flex justify-between `}>
+              <div className={`${isCollapse ? "hidden" : "flex"} lg:flex`}>
+                <span className="text-[20px]">
+                  <CiCircleMore />
+                </span>
+                <span className="ml-2 text-sm tracking-wide truncate">
+                  More Options
+                </span>
+              </div>
+              <FaAngleDown
+                className={`cursor-pointer text-[20px] transition ${arrowStyles}`}
                 onClick={toggleAccordion}
               />
             </a>
 
             {isOpen && (
-              <ul className="ml-4">
+              <ul className={`${isCollapse ? "ml-0" : "ml-4"} lg:ml-4`}>
                 {moreMenuData.map((list) => {
                   return (
                     <li key={list.title}>
                       <Link
                         href={list.path}
-                        className="relative flex items-center h-9 pt-4 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-transparent pr-6"
+                        className={`relative flex items-center h-9 pt-4 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-transparent pr-6 `}
                       >
                         <span className="inline-flex justify-center items-center text-[20px]">
                           {list.icon}
