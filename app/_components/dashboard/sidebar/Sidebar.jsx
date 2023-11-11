@@ -38,7 +38,7 @@ const Sidebar = () => {
   };
   const moreMenuData = [
     { icon: <FiUsers />, title: "Clients", path: "clients" },
-    { icon: <AiOutlineUser />, title: "Profile", path: "title" },
+    { icon: <AiOutlineUser />, title: "Profile", path: "profile" },
     { icon: <AiOutlineSetting />, title: "Setting", path: "setting" },
     { icon: <FiLogOut />, title: "Logout", path: "logout" },
   ];
