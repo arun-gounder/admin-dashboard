@@ -37,10 +37,10 @@ const Sidebar = () => {
     ],
   };
   const moreMenuData = [
-    { icon: <FiUsers />, title: "Clients", path: "clients" },
-    { icon: <AiOutlineUser />, title: "Profile", path: "profile" },
-    { icon: <AiOutlineSetting />, title: "Setting", path: "setting" },
-    { icon: <FiLogOut />, title: "Logout", path: "logout" },
+    { icon: <FiUsers />, title: "Clients", path: "/dashboard/clients" },
+    { icon: <AiOutlineUser />, title: "Profile", path: "/dashboard/profile" },
+    { icon: <AiOutlineSetting />, title: "Setting", path: "/dashboard/setting" },
+    { icon: <FiLogOut />, title: "Logout", path: "/dashboard/logout" },
   ];
 
   const [isCollapse, setIsCollapse] = useState(true);
@@ -55,9 +55,8 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`lg:w-64 sticky h-screen flex flex-col top-0 left-0 ${
-        isCollapse ? "w-14" : "w-64"
-      } transition-all ease-in-out delay-200 bg-white h-full border-r`}
+      className={`lg:w-64 sticky h-screen flex flex-col top-0 left-0 ${isCollapse ? "w-14" : "w-64"
+        } transition-all ease-in-out delay-200 bg-white h-full border-r`}
     >
       <button
         onClick={() => setIsCollapse(!isCollapse)}
@@ -92,9 +91,8 @@ const Sidebar = () => {
 
           <li className="relative flex flex-col justify-center py-2 pl-4 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-orange-400 pr-6">
             <a
-              className={`${
-                isCollapse ? "block" : "flex items-center justify-between"
-              } lg:flex justify-between cursor-pointer `}
+              className={`${isCollapse ? "block" : "flex items-center justify-between"
+                } lg:flex justify-between cursor-pointer `}
               onClick={toggleAccordion}
             >
               <div className={`${isCollapse ? "hidden" : "flex"} lg:flex`}>
@@ -106,9 +104,8 @@ const Sidebar = () => {
                 </span>
               </div>
               <FaAngleDown
-                className={`text-[20px] transition ${
-                  isOpen ? "transform rotate-180" : "transform rotate-0"
-                }`}
+                className={`text-[20px] transition ${isOpen ? "transform rotate-180" : "transform rotate-0"
+                  }`}
               />
             </a>
 
